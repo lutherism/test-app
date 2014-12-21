@@ -1,0 +1,26 @@
+{
+  "name": "react-flux-bb",
+  "version": "0.0.1",
+  "description": "Fresh egg React+Flux+Backbone project for web apps",
+  "main": "index.html",
+  "keywords": [
+    "react"
+  ],
+  "authors": [
+    "lutherism"
+  ],
+  "license": "MIT",
+  "homepage": "github.com/lutherism/react-flux-bb",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jsx-requirejs-plugin": "~0.5.1",
+    "jquery": "~2.1.3",
+    "PG-Flux": "https://github.com/loupe/PG-Flux.git",
+    "requirejs": "~2.1.15"
+  }
+}
