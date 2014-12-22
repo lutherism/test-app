@@ -1,4 +1,6 @@
-define(["react", "stores", "views/NoteRowView"], function(React, stores, NoteRowView) {
+define(["react", "stores", "views/NoteRowView",
+  "views/NotesCollectionActionsView"], function(
+    React, stores, NoteRowView, NotesCollectionActionsView) {
   var NoteListView = React.createClass({displayName: "NoteListView",
     getInitialState: function() {
       return {
@@ -14,11 +16,19 @@ define(["react", "stores", "views/NoteRowView"], function(React, stores, NoteRow
       });
     },
     render: function() {
-      return React.createElement("div", {class: "table"}, 
-        stores.getNotes().map(function(note) {
-          return React.createElement(NoteRowView, {noteId: note.id});
-        })
-        )
+      return (
+        React.createElement("div", {className: "container clearfix"}, 
+          React.createElement("div", {className: "container"}, 
+            React.createElement("div", {className: "pull-right"}, 
+              React.createElement(NotesCollectionActionsView, null)
+            )
+          ), 
+          React.createElement("div", {className: "table"}, 
+          stores.getNotes().map(function(note) {
+            return React.createElement(NoteRowView, {noteId: note.cid});
+          })
+          )
+        ));
     }
   });
   return NoteListView;

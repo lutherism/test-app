@@ -1,4 +1,6 @@
-define(["react", "stores", "views/NoteRowView"], function(React, stores, NoteRowView) {
+define(["react", "stores", "views/NoteRowView",
+  "views/NotesCollectionActionsView"], function(
+    React, stores, NoteRowView, NotesCollectionActionsView) {
   var NoteListView = React.createClass({
     getInitialState: function() {
       return {
@@ -14,11 +16,19 @@ define(["react", "stores", "views/NoteRowView"], function(React, stores, NoteRow
       });
     },
     render: function() {
-      return <div class="table">
-        {stores.getNotes().map(function(note) {
-          return <NoteRowView noteId={note.id} />;
-        })}
-        </div>
+      return (
+        <div className="container clearfix">
+          <div className="container">
+            <div className="pull-right">
+              <NotesCollectionActionsView />
+            </div>
+          </div>
+          <div className="table">
+          {stores.getNotes().map(function(note) {
+            return <NoteRowView noteId={note.cid} />;
+          })}
+          </div>
+        </div>);
     }
   });
   return NoteListView;

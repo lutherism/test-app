@@ -1,11 +1,11 @@
 define(["react"], function(React) {
   var IndexView = React.createClass({
     render: function() {
-      return (<div class="container">
-        <h2 class="hello_world">
+      return (<div className="container">
+        <h2 className="hello_world">
           Welcome to my demo app!
         </h2>
-        <h3 class="nav-list">
+        <h3 className="nav-list">
           Links
         </h3>
         <ul>

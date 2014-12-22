@@ -3,9 +3,9 @@ define(['backbone', 'env'], function(
   ) {
   var NoteModel = Backbone.Model.extend({
     url: function() {
-      return env.apiServer + 'notes/' + this.id;
+      return env.apiServer + 'notes/' + (this.id?this.id:'');
     },
-    defualts: {
+    defaults: {
       'subject': 'default subject.',
       'message': 'defualt message.'
     }

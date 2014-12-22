@@ -9,7 +9,7 @@ define(["underscore", "backbone", "react", "stores", "dispatcher", "pathStore"],
   var MyRouter = Backbone.Router.extend({
     routes: {
       '': 'index',
-      'notes': 'notes'
+      ':notes': 'notes'
     },
     index: function() {
       dispatcher.dispatchRouteAction({

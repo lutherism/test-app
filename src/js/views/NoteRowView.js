@@ -1,13 +1,22 @@
-define(["react", "stores"], function(React) {
+define(["react", "stores", "views/NoteMetaView", "views/NoteActionsView",
+  "views/NoteEditingView"], function(
+  React, stores, NoteMetaView, NoteActionsView, NoteEditingView
+  ) {
   var NoteRowView = React.createClass({displayName: "NoteRowView",
     render: function() {
+      var noteView;
+      if (stores.getNotes().get(this.props.noteId).get('editing')) {
+        noteView = React.createElement(NoteEditingView, {noteId: this.props.noteId});
+      } else {
+        noteView = React.createElement(NoteMetaView, {noteId: this.props.noteId})
+      }
       return (
-        React.createElement("div", {class: "row"}, 
-          React.createElement("div", {class: "col-xs-8"}, 
-            React.createElement(NotesMetaView, {noteId: this.props.noteId})
+        React.createElement("div", {className: "row"}, 
+          React.createElement("div", {className: "col-xs-8"}, 
+            noteView
           ), 
-          React.createElement("div", {class: "col-xs-4"}, 
-            React.createElement(NoteActionsView, null)
+          React.createElement("div", {className: "col-xs-4"}, 
+            React.createElement(NoteActionsView, {noteId: this.props.noteId})
           )
         )
       )

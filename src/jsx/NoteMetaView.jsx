@@ -1,4 +1,4 @@
-define(["react", "stores"], function(React) {
+define(["react", "stores"], function(React, stores) {
   var NoteMetaView = React.createClass({
     getInitialState: function() {
       return {
@@ -11,12 +11,11 @@ define(["react", "stores"], function(React) {
     render: function() {
       return (
         <div class="well">
-          <label>Subject:</label>
-          <small>{this.note.get('subject')}</small>
-          <label>From:</label>
-          <small>{this.note.get('creatorId')}</small>
-          <label>Body:</label>
-          <h4>{this.note.get('message')}</h4>
+          <h3>{stores.getNotes().get(this.props.noteId).get('subject')}
+          <small>&nbsp;{stores.getNotes().get(this.props.noteId).get('creatorId')}</small>
+          </h3>
+          <br />
+          <h4>{stores.getNotes().get(this.props.noteId).get('message')}</h4>
         </div>
       )
     }

@@ -1,11 +1,11 @@
 define(["react"], function(React) {
   var IndexView = React.createClass({displayName: "IndexView",
     render: function() {
-      return (React.createElement("div", {class: "container"}, 
-        React.createElement("h2", {class: "hello_world"}, 
+      return (React.createElement("div", {className: "container"}, 
+        React.createElement("h2", {className: "hello_world"}, 
           "Welcome to my demo app!"
         ), 
-        React.createElement("h3", {class: "nav-list"}, 
+        React.createElement("h3", {className: "nav-list"}, 
           "Links"
         ), 
         React.createElement("ul", null, 

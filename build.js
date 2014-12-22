@@ -1,6 +1,6 @@
 ({
     "baseUrl": "./src/js/",
-    "name": "main",
+    "name": "config",
     "isBuild": true,
     "paths": {
       "react": "../../bower_components/react/react-with-addons",
@@ -12,7 +12,8 @@
       "text": "../../bower_components/requirejs-text/text",
       "dispatcher": "../../bower_components/PG-Flux/src/dispatcher",
       "invariant": "../../bower_components/PG-Flux/src/invariant",
-      "ViewManager": "../jsx/ViewManager"
+      "ViewManager": "../jsx/ViewManager",
+      "env": "../json/env"
     },
     "shims": {
       "backbone": {
@@ -25,8 +26,8 @@
     },
 
     "stubModules": ["jsx"],
-    "out": "app.js",
+    "out": "./build/app.js",
     "jsx": {
       "fileExtension": '.jsx'
     },
-  });
+  })

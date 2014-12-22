@@ -25,6 +25,7 @@ require.config({
       }
     },
   });
+
 define(['backbone', 'main', 'react', 'views/ViewManager'], function(
   Backbone, AppRouter, React, ViewManager) {
   var myApp = new AppRouter();
@@ -32,5 +33,5 @@ define(['backbone', 'main', 'react', 'views/ViewManager'], function(
     React.createElement(ViewManager, null),
     document.querySelector('body')
   );
-  Backbone.history.start();
+  Backbone.history.start({pushState: true});
 });

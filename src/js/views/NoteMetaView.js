@@ -1,4 +1,4 @@
-define(["react", "stores"], function(React) {
+define(["react", "stores"], function(React, stores) {
   var NoteMetaView = React.createClass({displayName: "NoteMetaView",
     getInitialState: function() {
       return {
@@ -11,12 +11,11 @@ define(["react", "stores"], function(React) {
     render: function() {
       return (
         React.createElement("div", {class: "well"}, 
-          React.createElement("label", null, "Subject:"), 
-          React.createElement("small", null, this.note.get('subject')), 
-          React.createElement("label", null, "From:"), 
-          React.createElement("small", null, this.note.get('creatorId')), 
-          React.createElement("label", null, "Body:"), 
-          React.createElement("h4", null, this.note.get('message'))
+          React.createElement("h3", null, stores.getNotes().get(this.props.noteId).get('subject'), 
+          React.createElement("small", null, " ", stores.getNotes().get(this.props.noteId).get('creatorId'))
+          ), 
+          React.createElement("br", null), 
+          React.createElement("h4", null, stores.getNotes().get(this.props.noteId).get('message'))
         )
       )
     }
