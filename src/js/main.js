@@ -7,11 +7,9 @@ define(["underscore", "backbone", "react", "stores", "dispatcher", "pathStore"],
   PathStore
   ) {
   var MyRouter = Backbone.Router.extend({
-    initialize: function() {
-      stores.set('pathStore', new PathStore());
-    },
     routes: {
-      '': 'index'
+      '': 'index',
+      'notes': 'notes'
     },
     index: function() {
       dispatcher.dispatchRouteAction({
@@ -19,6 +17,15 @@ define(["underscore", "backbone", "react", "stores", "dispatcher", "pathStore"],
         concern: 'update',
         data: {
           route: 'index'
+        }
+      });
+    },
+    notes: function() {
+      dispatcher.dispatchRouteAction({
+        type: 'notes',
+        concern: 'update',
+        data: {
+          route: 'notes'
         }
       });
     }

@@ -9,7 +9,8 @@ require.config({
       "jquery": "../../bower_components/jquery/dist/jquery",
       "text": "../../bower_components/requirejs-text/text",
       "dispatcher": "../../bower_components/PG-Flux/src/dispatcher",
-      "invariant": "../../bower_components/PG-Flux/src/invariant"
+      "invariant": "../../bower_components/PG-Flux/src/invariant",
+      "env": "../json/env"
     },
     jsx: {
       fileExtension: '.jsx'

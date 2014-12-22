@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   env = require('./dev/json/rjs-config'),
   gulpReact = require('gulp-react'),
   path = require('path'),
+  watch = require('gulp-watch');
   fs = require('fs');
   console.log(env);
 
@@ -20,4 +21,11 @@ gulp.task('buildReactJS', function() {
         .pipe(gulp.dest('./src/js/views/'));
     });
   });
+});
+
+gulp.task('watchJSX', function () {
+    gulp.src('./src/jsx/*.jsx')
+        .pipe(watch('./src/jsx/*.jsx'))
+        .pipe(gulpReact())
+        .pipe(gulp.dest('./src/js/views/'));
 });

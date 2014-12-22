@@ -1,8 +1,8 @@
-define(['react', 'dispatcher', 'views/IndexView', 'stores'], function (
+define(['react', 'dispatcher', 'views/IndexView', 'stores', 'views/NoteListView'], function (
   React,
   dispatcher,
   IndexView,
-  stores
+  stores, NotesListView
   ) {
   var ViewManager = React.createClass({displayName: "ViewManager",
     componentDidMount: function(options) {
@@ -15,11 +15,13 @@ define(['react', 'dispatcher', 'views/IndexView', 'stores'], function (
       }
     },
     render: function() {
-      var ret = (React.createElement("h2", null, "404"));
+      var ret = React.createElement("h2", null, "404");
       switch (this.state.route) {
         case 'index':
-          ret = (React.createElement(IndexView, null));
+          ret = React.createElement(IndexView, null);
           break;
+        case 'notes':
+          ret = React.createElement(NotesListView, null)
       }
       return ret;
     },

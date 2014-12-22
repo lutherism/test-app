@@ -1,4 +1,4 @@
-var env = {
+define({
 	requireConfig: {
     out: "app.js",
     baseUrl: ".",
@@ -30,7 +30,7 @@ var env = {
         exclude: ["react", "JSXTransformer", "text"]
       }
     ]
-	}
-};
+	},
+  apiServer: "http://localhost:8008/"
+});
 
-module.exports = env;

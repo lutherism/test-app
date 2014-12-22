@@ -1,9 +1,9 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'fs' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'mongoose' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose cache add [ 'fs', null ]
-5 verbose cache add name=undefined spec="fs" args=["fs",null]
+4 verbose cache add [ 'mongoose', null ]
+5 verbose cache add name=undefined spec="mongoose" args=["mongoose",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -13,99 +13,380 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'fs',
-6 verbose parsed url   path: 'fs',
-6 verbose parsed url   href: 'fs' }
-7 silly lockFile 3f4bb586-fs fs
-8 verbose lock fs /Users/alexjansen1/.npm/3f4bb586-fs.lock
-9 silly lockFile 3f4bb586-fs fs
-10 silly lockFile 3f4bb586-fs fs
-11 verbose addNamed [ 'fs', '' ]
+6 verbose parsed url   pathname: 'mongoose',
+6 verbose parsed url   path: 'mongoose',
+6 verbose parsed url   href: 'mongoose' }
+7 silly lockFile f25dbdd3-mongoose mongoose
+8 verbose lock mongoose /Users/alexjansen1/.npm/f25dbdd3-mongoose.lock
+9 silly lockFile f25dbdd3-mongoose mongoose
+10 silly lockFile f25dbdd3-mongoose mongoose
+11 verbose addNamed [ 'mongoose', '' ]
 12 verbose addNamed [ null, '*' ]
-13 silly lockFile a107b96b-fs fs@
-14 verbose lock fs@ /Users/alexjansen1/.npm/a107b96b-fs.lock
-15 silly addNameRange { name: 'fs', range: '*', hasData: false }
-16 verbose request where is /fs
+13 silly lockFile 3bb0fc31-mongoose mongoose@
+14 verbose lock mongoose@ /Users/alexjansen1/.npm/3bb0fc31-mongoose.lock
+15 silly addNameRange { name: 'mongoose', range: '*', hasData: false }
+16 verbose request where is /mongoose
 17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 8e10a19561eaadbd
-19 verbose url raw /fs
-20 verbose url resolving [ 'https://registry.npmjs.org/', './fs' ]
-21 verbose url resolved https://registry.npmjs.org/fs
-22 verbose request where is https://registry.npmjs.org/fs
-23 info trying registry request attempt 1 at 16:17:15
-24 http GET https://registry.npmjs.org/fs
-25 http 200 https://registry.npmjs.org/fs
+18 verbose request id 7c709f59ab6bd401
+19 verbose url raw /mongoose
+20 verbose url resolving [ 'https://registry.npmjs.org/', './mongoose' ]
+21 verbose url resolved https://registry.npmjs.org/mongoose
+22 verbose request where is https://registry.npmjs.org/mongoose
+23 info trying registry request attempt 1 at 04:30:18
+24 http GET https://registry.npmjs.org/mongoose
+25 http 200 https://registry.npmjs.org/mongoose
 26 silly registry.get cb [ 200,
-26 silly registry.get   { date: 'Sun, 21 Dec 2014 00:17:16 GMT',
+26 silly registry.get   { date: 'Sun, 21 Dec 2014 12:30:18 GMT',
 26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-26 silly registry.get     etag: '"3UQWMMZD15TH5WUAUG7KMSL14"',
+26 silly registry.get     etag: '"2YYN2GK0FBB2QQBPSSEPGCQ8X"',
 26 silly registry.get     'content-type': 'application/json',
 26 silly registry.get     'cache-control': 'max-age=60',
-26 silly registry.get     'content-length': '1581',
+26 silly registry.get     'content-length': '286513',
 26 silly registry.get     'accept-ranges': 'bytes',
 26 silly registry.get     via: '1.1 varnish',
-26 silly registry.get     age: '0',
-26 silly registry.get     'x-served-by': 'cache-sjc3126-SJC',
-26 silly registry.get     'x-cache': 'MISS',
-26 silly registry.get     'x-cache-hits': '0',
-26 silly registry.get     'x-timer': 'S1419121035.996126,VS0,VE348',
+26 silly registry.get     age: '44',
+26 silly registry.get     'x-served-by': 'cache-lax1421-LAX',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1419165018.444261,VS0,VE1',
 26 silly registry.get     vary: 'Accept',
 26 silly registry.get     'keep-alive': 'timeout=10, max=50',
 26 silly registry.get     connection: 'Keep-Alive' } ]
-27 silly addNameRange number 2 { name: 'fs', range: '*', hasData: true }
-28 silly addNameRange versions [ 'fs', [ '0.0.0', '0.0.2' ] ]
-29 verbose addNamed [ 'fs', '0.0.2' ]
-30 verbose addNamed [ '0.0.2', '0.0.2' ]
-31 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
-32 verbose lock fs@0.0.2 /Users/alexjansen1/.npm/afea0479-fs-0-0-2.lock
-33 silly lockFile f18d0b15-gistry-npmjs-org-fs-fs-0-0-2-tgz https://registry.npmjs.org/fs/-/fs-0.0.2.tgz
-34 verbose lock https://registry.npmjs.org/fs/-/fs-0.0.2.tgz /Users/alexjansen1/.npm/f18d0b15-gistry-npmjs-org-fs-fs-0-0-2-tgz.lock
-35 verbose addRemoteTarball [ 'https://registry.npmjs.org/fs/-/fs-0.0.2.tgz',
-35 verbose addRemoteTarball   'e1f244ef3933c1b2a64bd4799136060d0f5914f8' ]
-36 info retry fetch attempt 1 at 16:17:16
-37 verbose fetch to= /var/folders/qf/99g_xmc17r55797_91sj576w0000gp/T/npm-2746-6KvZL_mZ/registry.npmjs.org/fs/-/fs-0.0.2.tgz
-38 http GET https://registry.npmjs.org/fs/-/fs-0.0.2.tgz
-39 http 200 https://registry.npmjs.org/fs/-/fs-0.0.2.tgz
-40 silly lockFile f18d0b15-gistry-npmjs-org-fs-fs-0-0-2-tgz https://registry.npmjs.org/fs/-/fs-0.0.2.tgz
-41 silly lockFile f18d0b15-gistry-npmjs-org-fs-fs-0-0-2-tgz https://registry.npmjs.org/fs/-/fs-0.0.2.tgz
-42 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
-43 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
-44 silly lockFile a107b96b-fs fs@
-45 silly lockFile a107b96b-fs fs@
-46 silly resolved [ { name: 'fs',
-46 silly resolved     version: '0.0.2',
-46 silly resolved     description: '',
-46 silly resolved     main: 'index.js',
-46 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
-46 silly resolved     author: '',
-46 silly resolved     license: 'MIT',
-46 silly resolved     _id: 'fs@0.0.2',
-46 silly resolved     _shasum: 'e1f244ef3933c1b2a64bd4799136060d0f5914f8',
-46 silly resolved     _from: 'fs@',
-46 silly resolved     _npmVersion: '1.4.14',
-46 silly resolved     _npmUser: { name: 'alsotang', email: 'alsotang@gmail.com' },
-46 silly resolved     maintainers: [ [Object] ],
+27 silly addNameRange number 2 { name: 'mongoose', range: '*', hasData: true }
+28 silly addNameRange versions [ 'mongoose',
+28 silly addNameRange   [ '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '1.0.2',
+28 silly addNameRange     '0.0.6',
+28 silly addNameRange     '1.0.3',
+28 silly addNameRange     '1.0.4',
+28 silly addNameRange     '1.0.5',
+28 silly addNameRange     '1.0.6',
+28 silly addNameRange     '1.0.7',
+28 silly addNameRange     '1.0.8',
+28 silly addNameRange     '1.0.10',
+28 silly addNameRange     '1.0.11',
+28 silly addNameRange     '1.0.12',
+28 silly addNameRange     '1.0.13',
+28 silly addNameRange     '1.0.14',
+28 silly addNameRange     '1.0.15',
+28 silly addNameRange     '1.0.16',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2',
+28 silly addNameRange     '1.1.3',
+28 silly addNameRange     '1.1.4',
+28 silly addNameRange     '1.1.5',
+28 silly addNameRange     '1.1.6',
+28 silly addNameRange     '1.1.7',
+28 silly addNameRange     '1.1.8',
+28 silly addNameRange     '1.1.9',
+28 silly addNameRange     '1.1.10',
+28 silly addNameRange     '1.1.11',
+28 silly addNameRange     '1.1.12',
+28 silly addNameRange     '1.1.13',
+28 silly addNameRange     '1.1.14',
+28 silly addNameRange     '1.1.15',
+28 silly addNameRange     '1.1.16',
+28 silly addNameRange     '1.1.17',
+28 silly addNameRange     '1.1.18',
+28 silly addNameRange     '1.1.19',
+28 silly addNameRange     '1.1.20',
+28 silly addNameRange     '1.1.21',
+28 silly addNameRange     '1.1.22',
+28 silly addNameRange     '1.1.23',
+28 silly addNameRange     '1.1.24',
+28 silly addNameRange     '1.1.25',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '1.3.0',
+28 silly addNameRange     '1.3.1',
+28 silly addNameRange     '1.3.2',
+28 silly addNameRange     '1.3.3',
+28 silly addNameRange     '1.3.4',
+28 silly addNameRange     '1.3.5',
+28 silly addNameRange     '1.3.6',
+28 silly addNameRange     '1.3.7',
+28 silly addNameRange     '1.4.0',
+28 silly addNameRange     '1.5.0',
+28 silly addNameRange     '1.6.0',
+28 silly addNameRange     '1.7.2',
+28 silly addNameRange     '1.7.3',
+28 silly addNameRange     '1.7.4',
+28 silly addNameRange     '1.8.0',
+28 silly addNameRange     '1.8.1',
+28 silly addNameRange     '1.8.2',
+28 silly addNameRange     '1.8.3',
+28 silly addNameRange     '1.8.4',
+28 silly addNameRange     '2.0.0',
+28 silly addNameRange     '2.0.1',
+28 silly addNameRange     '2.0.2',
+28 silly addNameRange     '2.0.3',
+28 silly addNameRange     '2.0.4',
+28 silly addNameRange     '2.1.0',
+28 silly addNameRange     '2.1.1',
+28 silly addNameRange     '2.1.2',
+28 silly addNameRange     '2.1.3',
+28 silly addNameRange     '2.1.4',
+28 silly addNameRange     '2.2.0',
+28 silly addNameRange     '2.2.1',
+28 silly addNameRange     '2.2.2',
+28 silly addNameRange     '2.2.3',
+28 silly addNameRange     '2.2.4',
+28 silly addNameRange     '2.3.0',
+28 silly addNameRange     '2.3.1',
+28 silly addNameRange     '2.3.2',
+28 silly addNameRange     '2.3.3',
+28 silly addNameRange     '2.3.4',
+28 silly addNameRange     '2.3.5',
+28 silly addNameRange     '2.3.6',
+28 silly addNameRange     '2.3.7',
+28 silly addNameRange     '2.3.8',
+28 silly addNameRange     '2.3.9',
+28 silly addNameRange     '2.3.10',
+28 silly addNameRange     '2.3.11',
+28 silly addNameRange     '2.3.12',
+28 silly addNameRange     '2.3.13',
+28 silly addNameRange     '2.4.0',
+28 silly addNameRange     '2.4.1',
+28 silly addNameRange     '2.4.2',
+28 silly addNameRange     '2.4.3',
+28 silly addNameRange     '2.4.4',
+28 silly addNameRange     '2.4.5',
+28 silly addNameRange     '2.4.6',
+28 silly addNameRange     '2.4.7',
+28 silly addNameRange     '2.4.8',
+28 silly addNameRange     '2.4.9',
+28 silly addNameRange     '2.4.10',
+28 silly addNameRange     '2.5.0',
+28 silly addNameRange     '2.5.1',
+28 silly addNameRange     '2.5.2',
+28 silly addNameRange     '2.5.3',
+28 silly addNameRange     '2.5.4',
+28 silly addNameRange     '2.5.5',
+28 silly addNameRange     '2.5.6',
+28 silly addNameRange     '2.5.7',
+28 silly addNameRange     '2.5.8',
+28 silly addNameRange     '2.5.9',
+28 silly addNameRange     '2.5.10',
+28 silly addNameRange     '2.5.11',
+28 silly addNameRange     '2.5.12',
+28 silly addNameRange     '2.5.13',
+28 silly addNameRange     '2.5.14',
+28 silly addNameRange     '2.6.0',
+28 silly addNameRange     '2.6.1',
+28 silly addNameRange     '2.6.2',
+28 silly addNameRange     '2.6.3',
+28 silly addNameRange     '2.6.4',
+28 silly addNameRange     '2.6.5',
+28 silly addNameRange     '2.6.6',
+28 silly addNameRange     '2.6.7',
+28 silly addNameRange     '2.6.8',
+28 silly addNameRange     '2.7.0',
+28 silly addNameRange     '2.7.1',
+28 silly addNameRange     '2.7.2',
+28 silly addNameRange     '2.7.4',
+28 silly addNameRange     '2.7.3',
+28 silly addNameRange     '3.0.0',
+28 silly addNameRange     '3.0.1',
+28 silly addNameRange     '3.0.2',
+28 silly addNameRange     '2.8.0',
+28 silly addNameRange     '3.0.3',
+28 silly addNameRange     '3.1.0',
+28 silly addNameRange     '2.8.1',
+28 silly addNameRange     '3.1.1',
+28 silly addNameRange     '2.8.2',
+28 silly addNameRange     '2.8.3',
+28 silly addNameRange     '2.9.0',
+28 silly addNameRange     '3.2.0',
+28 silly addNameRange     '2.9.1',
+28 silly addNameRange     '3.2.1',
+28 silly addNameRange     '2.9.2',
+28 silly addNameRange     '3.2.2',
+28 silly addNameRange     '3.3.0',
+28 silly addNameRange     '3.3.1',
+28 silly addNameRange     '2.9.3',
+28 silly addNameRange     '3.4.0',
+28 silly addNameRange     '2.9.4',
+28 silly addNameRange     '2.9.5',
+28 silly addNameRange     '3.5.0',
+28 silly addNameRange     '3.5.1',
+28 silly addNameRange     '3.5.2',
+28 silly addNameRange     '3.5.3',
+28 silly addNameRange     '2.9.6',
+28 silly addNameRange     '2.9.7',
+28 silly addNameRange     '3.5.4',
+28 silly addNameRange     '3.5.5',
+28 silly addNameRange     '2.9.8',
+28 silly addNameRange     '2.9.9',
+28 silly addNameRange     '3.5.6',
+28 silly addNameRange     '3.5.7',
+28 silly addNameRange     '3.5.8',
+28 silly addNameRange     '2.9.10',
+28 silly addNameRange     '3.5.9',
+28 silly addNameRange     '3.6.2',
+28 silly addNameRange     '3.5.10',
+28 silly addNameRange     '3.6.3',
+28 silly addNameRange     '3.5.11',
+28 silly addNameRange     '3.6.4',
+28 silly addNameRange     '3.6.5',
+28 silly addNameRange     '3.6.6',
+28 silly addNameRange     '3.6.7',
+28 silly addNameRange     '3.5.12',
+28 silly addNameRange     '3.6.8',
+28 silly addNameRange     '3.6.9',
+28 silly addNameRange     '3.6.10',
+28 silly addNameRange     '3.5.13',
+28 silly addNameRange     '3.5.14',
+28 silly addNameRange     '3.6.11',
+28 silly addNameRange     '3.6.12',
+28 silly addNameRange     '3.6.13',
+28 silly addNameRange     '3.6.14',
+28 silly addNameRange     '3.6.15',
+28 silly addNameRange     '3.5.15',
+28 silly addNameRange     '3.7.0',
+28 silly addNameRange     '3.6.16',
+28 silly addNameRange     '3.5.16',
+28 silly addNameRange     '3.6.17',
+28 silly addNameRange     '3.7.2',
+28 silly addNameRange     '3.0.0-alpha1',
+28 silly addNameRange     '3.0.0-alpha2',
+28 silly addNameRange     '3.0.0-rc0',
+28 silly addNameRange     '3.6.0-rc0',
+28 silly addNameRange     '3.6.0-rc1',
+28 silly addNameRange     '3.6.18',
+28 silly addNameRange     '3.7.3',
+28 silly addNameRange     '3.6.19',
+28 silly addNameRange     '3.6.20',
+28 silly addNameRange     '3.7.4',
+28 silly addNameRange     '3.8.0',
+28 silly addNameRange     '3.8.1',
+28 silly addNameRange     '3.8.2',
+28 silly addNameRange     '3.8.3',
+28 silly addNameRange     '3.8.4',
+28 silly addNameRange     '3.8.5',
+28 silly addNameRange     '3.8.6',
+28 silly addNameRange     '3.8.7',
+28 silly addNameRange     '3.8.8',
+28 silly addNameRange     '3.8.9',
+28 silly addNameRange     '3.8.10',
+28 silly addNameRange     '3.8.11',
+28 silly addNameRange     '3.9.0',
+28 silly addNameRange     '3.8.12',
+28 silly addNameRange     '3.8.13',
+28 silly addNameRange     '3.8.14',
+28 silly addNameRange     '3.8.15',
+28 silly addNameRange     '3.9.1',
+28 silly addNameRange     '3.8.16',
+28 silly addNameRange     '3.9.2',
+28 silly addNameRange     '3.8.17',
+28 silly addNameRange     '3.9.3',
+28 silly addNameRange     '3.8.18',
+28 silly addNameRange     '3.9.4',
+28 silly addNameRange     '3.8.19',
+28 silly addNameRange     '3.9.5',
+28 silly addNameRange     '3.8.20',
+28 silly addNameRange     '3.9.6',
+28 silly addNameRange     '3.8.21',
+28 silly addNameRange     '3.9.7' ] ]
+29 verbose addNamed [ 'mongoose', '3.8.21' ]
+30 verbose addNamed [ '3.8.21', '3.8.21' ]
+31 silly lockFile e1560adf-mongoose-3-8-21 mongoose@3.8.21
+32 verbose lock mongoose@3.8.21 /Users/alexjansen1/.npm/e1560adf-mongoose-3-8-21.lock
+33 silly lockFile e1a0ff21-org-mongoose-mongoose-3-8-21-tgz https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+34 verbose lock https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz /Users/alexjansen1/.npm/e1a0ff21-org-mongoose-mongoose-3-8-21-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz',
+35 verbose addRemoteTarball   'ba96d6e73b7b73a5c133ca886de316994df2a2f0' ]
+36 info retry fetch attempt 1 at 04:30:18
+37 verbose fetch to= /var/folders/qf/99g_xmc17r55797_91sj576w0000gp/T/npm-5178-SztVBlIM/registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+38 http GET https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+39 http 200 https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+40 silly lockFile e1a0ff21-org-mongoose-mongoose-3-8-21-tgz https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+41 silly lockFile e1a0ff21-org-mongoose-mongoose-3-8-21-tgz https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz
+42 silly lockFile e1560adf-mongoose-3-8-21 mongoose@3.8.21
+43 silly lockFile e1560adf-mongoose-3-8-21 mongoose@3.8.21
+44 silly lockFile 3bb0fc31-mongoose mongoose@
+45 silly lockFile 3bb0fc31-mongoose mongoose@
+46 silly resolved [ { name: 'mongoose',
+46 silly resolved     description: 'Mongoose MongoDB ODM',
+46 silly resolved     version: '3.8.21',
+46 silly resolved     author: { name: 'Guillermo Rauch', email: 'guillermo@learnboost.com' },
+46 silly resolved     keywords:
+46 silly resolved      [ 'mongodb',
+46 silly resolved        'document',
+46 silly resolved        'model',
+46 silly resolved        'schema',
+46 silly resolved        'database',
+46 silly resolved        'odm',
+46 silly resolved        'data',
+46 silly resolved        'datastore',
+46 silly resolved        'query',
+46 silly resolved        'nosql',
+46 silly resolved        'orm',
+46 silly resolved        'db' ],
+46 silly resolved     dependencies:
+46 silly resolved      { mongodb: '1.4.12',
+46 silly resolved        hooks: '0.2.1',
+46 silly resolved        ms: '0.1.0',
+46 silly resolved        sliced: '0.0.5',
+46 silly resolved        muri: '0.3.1',
+46 silly resolved        mpromise: '0.4.3',
+46 silly resolved        mpath: '0.1.1',
+46 silly resolved        'regexp-clone': '0.0.1',
+46 silly resolved        mquery: '0.8.0' },
+46 silly resolved     devDependencies:
+46 silly resolved      { mocha: '1.12.0',
+46 silly resolved        'node-static': '0.5.9',
+46 silly resolved        dox: '0.3.1',
+46 silly resolved        jade: '0.26.3',
+46 silly resolved        'highlight.js': '7.0.1',
+46 silly resolved        markdown: '0.3.1',
+46 silly resolved        'promises-aplus-tests': '>= 1.0.2',
+46 silly resolved        tbd: '0.6.4',
+46 silly resolved        benchmark: '1.0.0',
+46 silly resolved        open: '0.0.3',
+46 silly resolved        async: '0.2.5',
+46 silly resolved        underscore: '1.5.2' },
+46 silly resolved     directories: { lib: './lib/mongoose' },
+46 silly resolved     scripts: { test: 'make test' },
+46 silly resolved     main: './index.js',
+46 silly resolved     engines: { node: '>=0.6.19' },
+46 silly resolved     bugs:
+46 silly resolved      { url: 'https://github.com/learnboost/mongoose/issues/new',
+46 silly resolved        email: 'mongoose-orm@googlegroups.com' },
+46 silly resolved     repository: { type: 'git', url: 'git://github.com/LearnBoost/mongoose.git' },
+46 silly resolved     homepage: 'http://mongoosejs.com',
+46 silly resolved     gitHead: '79ba94f9ba905d5e4b6d48f5891446a6bb0ecd4e',
+46 silly resolved     _id: 'mongoose@3.8.21',
+46 silly resolved     _shasum: 'ba96d6e73b7b73a5c133ca886de316994df2a2f0',
+46 silly resolved     _from: 'mongoose@',
+46 silly resolved     _npmVersion: '1.4.21',
+46 silly resolved     _npmUser: { name: 'vkarpov15', email: 'valkar207@gmail.com' },
+46 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
 46 silly resolved     dist:
-46 silly resolved      { shasum: 'e1f244ef3933c1b2a64bd4799136060d0f5914f8',
-46 silly resolved        tarball: 'http://registry.npmjs.org/fs/-/fs-0.0.2.tgz' },
-46 silly resolved     directories: {},
-46 silly resolved     _resolved: 'https://registry.npmjs.org/fs/-/fs-0.0.2.tgz' } ]
-47 info install fs@0.0.2 into /usr/local/lib
-48 info installOne fs@0.0.2
-49 verbose lib/node_modules/fs unbuild
-50 verbose tar unpack /Users/alexjansen1/.npm/fs/0.0.2/package.tgz
-51 silly lockFile 0211c39b-ar-usr-local-lib-node-modules-fs tar:///usr/local/lib/node_modules/fs
-52 verbose lock tar:///usr/local/lib/node_modules/fs /Users/alexjansen1/.npm/0211c39b-ar-usr-local-lib-node-modules-fs.lock
-53 silly lockFile 78fe313b-jansen1-npm-fs-0-0-2-package-tgz tar:///Users/alexjansen1/.npm/fs/0.0.2/package.tgz
-54 verbose lock tar:///Users/alexjansen1/.npm/fs/0.0.2/package.tgz /Users/alexjansen1/.npm/78fe313b-jansen1-npm-fs-0-0-2-package-tgz.lock
+46 silly resolved      { shasum: 'ba96d6e73b7b73a5c133ca886de316994df2a2f0',
+46 silly resolved        tarball: 'http://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz' },
+46 silly resolved     _resolved: 'https://registry.npmjs.org/mongoose/-/mongoose-3.8.21.tgz' } ]
+47 info install mongoose@3.8.21 into /usr/local/lib
+48 info installOne mongoose@3.8.21
+49 verbose lib/node_modules/mongoose unbuild
+50 verbose tar unpack /Users/alexjansen1/.npm/mongoose/3.8.21/package.tgz
+51 silly lockFile 9c21d498--local-lib-node-modules-mongoose tar:///usr/local/lib/node_modules/mongoose
+52 verbose lock tar:///usr/local/lib/node_modules/mongoose /Users/alexjansen1/.npm/9c21d498--local-lib-node-modules-mongoose.lock
+53 silly lockFile 5962d384--npm-mongoose-3-8-21-package-tgz tar:///Users/alexjansen1/.npm/mongoose/3.8.21/package.tgz
+54 verbose lock tar:///Users/alexjansen1/.npm/mongoose/3.8.21/package.tgz /Users/alexjansen1/.npm/5962d384--npm-mongoose-3-8-21-package-tgz.lock
 55 silly gunzTarPerm modes [ '755', '644' ]
-56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/fs'
-56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/fs']
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/mongoose'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/mongoose']
 56 error   errno: 3,
 56 error   code: 'EACCES',
-56 error   path: '/usr/local/lib/node_modules/fs',
+56 error   path: '/usr/local/lib/node_modules/mongoose',
 56 error   fstream_type: 'Directory',
-56 error   fstream_path: '/usr/local/lib/node_modules/fs',
+56 error   fstream_path: '/usr/local/lib/node_modules/mongoose',
 56 error   fstream_class: 'DirWriter',
 56 error   fstream_stack:
 56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
@@ -113,17 +394,17 @@
 56 error      'Object.oncomplete (fs.js:107:15)' ] }
 57 error Please try running this command again as root/Administrator.
 58 error System Darwin 14.0.0
-59 error command "node" "/usr/local/bin/npm" "install" "-g" "fs"
-60 error cwd /Users/alexjansen1/react-flux-bb/server
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "mongoose"
+60 error cwd /Users/alexjansen1/test-app/server
 61 error node -v v0.10.33
 62 error npm -v 1.4.28
-63 error path /usr/local/lib/node_modules/fs
-64 error fstream_path /usr/local/lib/node_modules/fs
+63 error path /usr/local/lib/node_modules/mongoose
+64 error fstream_path /usr/local/lib/node_modules/mongoose
 65 error fstream_type Directory
 66 error fstream_class DirWriter
 67 error code EACCES
 68 error errno 3
-69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/fs'
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/mongoose'
 70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
 70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
 70 error fstream_stack Object.oncomplete (fs.js:107:15)

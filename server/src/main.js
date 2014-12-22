@@ -13,6 +13,9 @@ var mimeTypes = {
   };
 
 var my_server = {
+    newApiServer: function() {
+      return require('./apiServer');
+    },
     newServer: function() {
       return function server(req, resp) {
         var uri = url.parse(req.url).pathname;
@@ -23,17 +26,22 @@ var my_server = {
         resp.writeHead(200, {
           'Content-Type': mimeType
         });
+        if (!fs.existsSync(filename)){
+          filename = path.join(process.cwd(), '..', 'src/html/index.html');
+        }
         if (fs.existsSync(filename)){
           var fileStream = fs.createReadStream(filename);
           fileStream.pipe(resp);
           setTimeout(function() {
             fileStream.unpipe(resp);
+            resp.end();
             console.log("cleanup");
           }, 1000);
         } else {
           resp.write("404");
+          resp.end();
         }
-      }
+      };
     }
 };
 

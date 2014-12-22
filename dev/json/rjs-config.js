@@ -1,6 +1,7 @@
-module.exports = {
+module.exports = ({
     "baseUrl": "./src/js/",
-    "out": "./app.js",
+    "name": "main",
+    "isBuild": true,
     "paths": {
       "react": "../../bower_components/react/react-with-addons",
       "JSXTransformer": "../../bower_components/jsx-requirejs-plugin/js/JSXTransformer",
@@ -10,10 +11,8 @@ module.exports = {
       "jquery": "../../bower_components/jquery/dist/jquery",
       "text": "../../bower_components/requirejs-text/text",
       "dispatcher": "../../bower_components/PG-Flux/src/dispatcher",
-      "invariant": "../../bower_components/PG-Flux/src/invariant"
-    },
-    "jsx": {
-      "fileExtension": '.jsx'
+      "invariant": "../../bower_components/PG-Flux/src/invariant",
+      "ViewManager": "../jsx/ViewManager"
     },
     "shims": {
       "backbone": {
@@ -24,6 +23,10 @@ module.exports = {
         "exports": "_"
       }
     },
+
     "stubModules": ["jsx"],
-    "name": "config"
-  };
+    "out": "app.js",
+    "jsx": {
+      "fileExtension": '.jsx'
+    },
+  });
