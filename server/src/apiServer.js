@@ -17,6 +17,10 @@ dbSpec.collections.forEach(function(modelName) {
 });
 
 console.log("opening db connection.");
+mongoose.connect('mongodb://localhost');
+mongoose.connection.once('open', function() {
+  console.log('db connection open');
+});
 
 var server = function (req, resp) {
     var endpoint = url.parse(req.url).pathname.split("/").slice(1);
@@ -27,15 +31,14 @@ var server = function (req, resp) {
       var schema = mSchemas[dbModel.name],
           modelProto = mModels[dbModel.name],
           postData = '';
+      console.log("handling " + req.method);
       req.on('end', function() {
-          mongoose.connect('mongodb://localhost');
-          mongoose.connection.once('open', function() {
+          console.log(mongoose.connection.readyState);
+          if (mongoose.connection.readyState === 1) {
             resp.writeHead(200, {
               'Access-Control-Allow-Origin': "*",
               'Content-Type': 'application/json'
-            })
-            console.log("connected to db.");
-            console.log("handling " + req.method);
+            });
             switch (req.method) {
               case 'CREATE':
               case 'POST':
@@ -45,42 +48,46 @@ var server = function (req, resp) {
                 //console.log(newModel.lean());
                 resp.write(postData);
                 resp.end();
-                mongoose.connection.close();
                 break;
               case 'PUT':
-              console.log(postData);
+                console.log(postData);
                 var query = modelProto.find({
-                  id: endpoint[1]
+                  _id: endpoint[1]
                 }).update({
                   subject: JSON.parse(postData).subject,
                   message: JSON.parse(postData).message
                 }, function(err, a, mongoResp) {
                   if (err) console.log(err);
                   resp.end();
-                  mongoose.connection.close();
-                })
-
+                });
                 break;
               case 'GET':
                 if (!endpoint[1]) {
                   modelProto.find(function (err, models) {
                     resp.write(JSON.stringify(models));
                     resp.end();
-                    mongoose.connection.close();
-                  });
-                } else {
-                  modelProto.find({id: endpoint[1]}, function (err, models) {
-                    resp.write(JSON.stringify(models));
-                    resp.end();
-                    mongoose.connection.close();
                   });
                 }
                 break;
+              case 'DELETE':
+                console.log(postData);
+                var query = modelProto.find({
+                  _id: endpoint[1]
+                }).findOneAndRemove(function(err, a, mongoResp) {
+                  if (err) console.log(err);
+                  console.log(endpoint[1] + ' delted.');
+                  resp.end();
+                });
+                break;
               default:
                 resp.end();
-                mongoose.connection.close();
             }
-          });
+          } else {
+            mongoose.connect('mongodb://localhost');
+            console.log('DB error');
+            resp.writeHead(500);
+            resp.end();
+          }
         });
       switch (req.method) {
         case 'POST':

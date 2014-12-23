@@ -3,7 +3,7 @@ module.exports = {
     notes: {
       allows: [
         "CREATE",
-        "DESTROY",
+        "DELETE",
         "UPDATE",
         "POST",
         "GET",
@@ -12,7 +12,7 @@ module.exports = {
       ],
       methods: {
         "CREATE": true,
-        "DESTROY": true,
+        "DELETE": true,
         "UPDATE": true,
         "POST": true,
         "GET": true,

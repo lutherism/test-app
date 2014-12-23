@@ -5,20 +5,17 @@ define(["react", "stores", "dispatcher"], function(
     getInitialState: function() {
       return {
         'subject': stores.getNotes().get(this.props.noteId).get('subject'),
-        'body': stores.getNotes().get(this.props.noteId).get('message')
+        'message': stores.getNotes().get(this.props.noteId).get('message')
       };
-    },
-    componentDidMount: function(options) {
-      this.setState({})
     },
     render: function() {
       return (
         <div className="form-group">
           <label>Subject:</label>
           <input className="form-input" value={this.state.subject}
-            onChange={this.setSubject} />
-          <label>Body</label>
-          <textarea className="text-input" value={this.state.body}
+            onChange={this.setSubjectState} />
+          <br /><label>Body</label>
+          <textarea className="text-input" value={this.state.message}
             onChange={this.setBodyState}/>
           <button onClick={this.cancelEdit}
             className="btn btn-xs btn-defualt">Cancel</button>
@@ -29,7 +26,7 @@ define(["react", "stores", "dispatcher"], function(
     },
     setBodyState: function(e) {
       this.setState({
-        body: e.target.value
+        message: e.target.value
       });
     },
     setSubjectState: function(e) {
@@ -42,7 +39,7 @@ define(["react", "stores", "dispatcher"], function(
         type: 'notes',
         concern: 'update',
         data: {
-          id: this.props.noteId,
+          cid: this.props.noteId,
           editing: false
         }
       });
@@ -54,7 +51,7 @@ define(["react", "stores", "dispatcher"], function(
         data: {
           cid: this.props.noteId,
           subject: this.state.subject,
-          message: this.state.body,
+          message: this.state.message,
           editing: false
         }
       });

@@ -6,7 +6,7 @@ define(["react", "stores", "views/NoteMetaView", "views/NoteActionsView",
     render: function() {
       var noteView;
       if (stores.getNotes().get(this.props.noteId).get('editing')) {
-        noteView = <NoteEditingView noteId ={this.props.noteId}/>;
+        noteView = <NoteEditingView noteId={this.props.noteId}/>;
       } else {
         noteView = <NoteMetaView noteId={this.props.noteId} />
       }
