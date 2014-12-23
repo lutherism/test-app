@@ -25,23 +25,23 @@
 
 To Run Local Mongo DB
 ---------------
-1) `cd` into repo
-2) run command `cd ./server/mongo/ && mongod`
+1. `cd` into repo
+2. run command `cd ./server/mongo/ && mongod`
 
 To Run Local Node Server
 ------------------
 
-1) `cd` into repo
-2) run command `cd ./server && node server.js`
+1. `cd` into repo
+2. run command `cd ./server && node server.js`
 
 
 To Develop Javascript
 ----------
-1) `cd` into repo
-2) Run `gulp watchJSX`
+1. `cd` into repo
+2. Run `gulp watchJSX`
 
 To Build Production Javascript
 ------------------------
 
-1) `cd` into repo
-2) Run `r.js -o build.js`
+1. `cd` into repo
+2. Run `r.js -o build.js`
