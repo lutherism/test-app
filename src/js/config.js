@@ -2,13 +2,11 @@ require.config({
     baseUrl: "./src/js",
     paths: {
       "react": "../../bower_components/react/react-with-addons",
-      "JSXTransformer": "../../bower_components/react/JSXTransformer",
       "backbone": "../../bower_components/backbone/backbone",
       "underscore": "../../bower_components/underscore/underscore",
-      "jquery": "../../bower_components/jquery/dist/jquery",
-      "dispatcher": "../../bower_components/PG-Flux/src/dispatcher",
-      "invariant": "../../bower_components/PG-Flux/src/invariant",
-      "env": "../json/env"
+      "env": "../json/env",
+      "flux": "../../bower_components/flux/dist/Flux",
+      "jquery": "../../bower_components/jquery/dist/jquery"
     },
     jsx: {
       fileExtension: '.jsx'

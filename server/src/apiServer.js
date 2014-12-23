@@ -44,10 +44,14 @@ var server = function (req, resp) {
               case 'POST':
                 console.log(postData);
                 var newModel = new modelProto(JSON.parse(postData));
-                newModel.save();
-                //console.log(newModel.lean());
-                resp.write(postData);
-                resp.end();
+                newModel.save(function(err, doc) {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    resp.write(JSON.stringify(doc.toJSON()));
+                  }
+                  resp.end();
+                });
                 break;
               case 'PUT':
                 console.log(postData);
@@ -62,12 +66,14 @@ var server = function (req, resp) {
                 });
                 break;
               case 'GET':
-                if (!endpoint[1]) {
-                  modelProto.find(function (err, models) {
+                var cred = {}
+                if (endpoint[1]) {
+                  cred._id = endpoint[1]
+                }
+                modelProto.find(cred, function (err, models) {
                     resp.write(JSON.stringify(models));
                     resp.end();
                   });
-                }
                 break;
               case 'DELETE':
                 console.log(postData);
@@ -78,6 +84,16 @@ var server = function (req, resp) {
                   console.log(endpoint[1] + ' delted.');
                   resp.end();
                 });
+                break;
+              case 'OPTIONS':
+                resp.writeHead(200, {
+                  'Access-Control-Allow-Methods': route.allows.join(', '),
+                  'Access-Control-Allow-Headers': 'accept, content-type',
+                  'Accept': '*/*',
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': "*"
+                });
+                resp.end();
                 break;
               default:
                 resp.end();
@@ -98,20 +114,9 @@ var server = function (req, resp) {
             postData+=chunk.toString();
           });
           break;
-        case 'GET':
-        case 'DELETE':
+        default:
           req.read();
           break;
-        case 'OPTIONS':
-            resp.writeHead(200, {
-              'Access-Control-Allow-Methods': route.allows.join(', '),
-              'Access-Control-Allow-Headers': 'accept, content-type',
-              'Accept': '*/*',
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': "*"
-            });
-            resp.end();
-            break;
         }
     } else {
       resp.write("You're not allowed to do that");
