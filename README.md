@@ -4,7 +4,6 @@
 -----------------------------------------------------------------------
 
     "frontend_dependencies": {
-        "jquery": "~2.1.3",
         "PG-Flux": "https://github.com/loupe/PG-Flux.git",
         "requirejs": "~2.1.15",
         "react": "~0.12.2",
