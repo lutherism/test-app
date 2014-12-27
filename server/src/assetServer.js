@@ -31,9 +31,7 @@ module.exports = function server(req, resp) {
           setTimeout(function() {
             fileStream.unpipe(resp);
             fileStream.close();
-            resp.write("timeout.");
             resp.end();
-            console.log("cleanup.");
           }, 1000);
         } else {
           resp.write("404");

@@ -6,15 +6,6 @@ var mongoose = require('mongoose'),
     dbSpec = require('../mongo/dbSpec');
     Models = dbSpec.models,
     apiSpec = require('./apiSpec'),
-    path = require('path'),
-    mSchemas = {},
-    mModels = {};
-
-dbSpec.collections.forEach(function(modelName) {
-  var modelSpec = dbSpec.models[modelName];
-  mSchemas[modelSpec.name] = mongoose.Schema(modelSpec.schema);
-  mModels[modelSpec.name] = mongoose.model(modelSpec.name, mSchemas[modelSpec.name]);
-});
 
 console.log("opening db connection.");
 mongoose.connect('mongodb://localhost');
@@ -28,8 +19,8 @@ var server = function (req, resp) {
     var route = apiSpec.endpoints[endpoint[0]],
       dbModel = dbSpec.models[endpoint[0]];
     if (route && route.methods[req.method]) {
-      var schema = mSchemas[dbModel.name],
-          modelProto = mModels[dbModel.name],
+      var schema = dbSpec.mSchemas[dbModel.name],
+          modelProto = dbSpec.mModels[dbModel.name],
           postData = '';
       console.log("handling " + req.method);
       req.on('end', function() {

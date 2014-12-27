@@ -5,7 +5,7 @@ define(['backbone', 'dispatcher', 'pathStore', 'NotesCollection'], function(
     initialize: function(options) {
       this.set('pathStore', new PathStore());
       this.set('notesStore', new NotesCollection());
-      this.get('notesStore').fetch({
+      this.getNotes().fetch({
         success: function() {
           this.getNotes().trigger('change:emit');
         }.bind(this)
@@ -13,12 +13,7 @@ define(['backbone', 'dispatcher', 'pathStore', 'NotesCollection'], function(
       dispatcher.register(this.dispatchHandler.bind(this));
     },
     dispatchHandler: function(payload) {
-      if (payload.source === dispatcher.constants.ROUTE_SOURCE) {
-        switch (payload.action.data.route) {
-          case 'notes':
-            break;
-        }
-      }
+
     },
     getNotes: function() {
       return this.get('notesStore');

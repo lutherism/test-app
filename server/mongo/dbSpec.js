@@ -1,4 +1,5 @@
-module.exports = {
+
+var exports = {
   collections: [
     "notes"
   ],
@@ -12,5 +13,11 @@ module.exports = {
         creatorId: String
       }
     }
-  }
+  },
+  mSchemas: {},
+  mModels: {}
 };
+
+
+
+module.exports = exports;
