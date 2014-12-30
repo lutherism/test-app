@@ -4,7 +4,7 @@
 -----------------------------------------------------------------------
 
     "frontend_dependencies": {
-        "PG-Flux": "https://github.com/loupe/PG-Flux.git",
+        "flux": "~2.0.2",
         "requirejs": "~2.1.15",
         "react": "~0.12.2",
         "backbone": "~1.1.2",
